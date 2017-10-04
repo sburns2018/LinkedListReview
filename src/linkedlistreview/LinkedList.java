@@ -5,7 +5,15 @@ public class LinkedList {
         
     public LinkedList() { }
         
-    public void addFirst() { }
+    public void addFirst(String value) { 
+        if (head == null) { 
+            head = new Node(value, null, null);
+        } else {
+            Node temp = head;
+            head = new Node(value, temp, null);
+            temp.setPrevious(head);
+        }
+    }
     
     public Node getFirst() { return head; }
     
