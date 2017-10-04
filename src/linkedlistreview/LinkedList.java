@@ -45,6 +45,7 @@ public class LinkedList {
              } else {
                  res += temp.getValue() + ", ";
              }
+             temp = temp.getNext();
          }
          return res;
     }
