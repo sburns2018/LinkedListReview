@@ -5,7 +5,7 @@ public class LinkedListReview {
        LinkedList a = new LinkedList();
        a.addFirst("Reeeee");
        a.addFirst("Pepe");
-       System.out.println(a.getFirst());
+       System.out.println(a.getFirst().getValue());
        System.out.println(a);
     } 
 }
