@@ -121,5 +121,21 @@ public class LinkedList {
     
     public void swap() { }
     
-    public void sort() { }
+    public void sort() { 
+        boolean keepGoing = true;
+        Node temp = head;
+        int index = 0;
+        while (keepGoing) {
+            keepGoing = false;
+            index = 0;
+            while (temp.getNext() != null) {
+                if (temp.compareTo(temp.getNext()) < 0) {
+                    keepGoing = true;
+                    swap(index, index + 1);
+                }
+                temp = temp.getNext();
+                index++;
+            }
+        }
+    }
 }
