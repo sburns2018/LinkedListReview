@@ -119,7 +119,14 @@ public class LinkedList {
         }
     }
     
-    public void swap() { }
+    public void swap(int firstIndex, int secondIndex) {
+        Node a = getAt(firstIndex);
+        Node b = getAt(secondIndex);
+        insertAt(firstIndex, b.getValue());
+        remove(firstIndex + 1);
+        insertAt(secondIndex, a.getValue());
+        remove(secondIndex + 1);
+    }
     
     public void sort() { }
 }
