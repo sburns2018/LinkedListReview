@@ -25,5 +25,7 @@ public class Node {
         previous = previousus;
     }
     
-    public int compareTo() { return 1; }
+    public int compareTo(Node targ) {
+        return getValue().compareTo(targ.getValue());
+    }
 }

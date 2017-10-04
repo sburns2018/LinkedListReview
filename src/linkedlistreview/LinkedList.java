@@ -35,7 +35,19 @@ public class LinkedList {
         return temp;
     }
     
-    public String toString() { return "a"; }
+    @Override
+    public String toString() { 
+         String res = "{ ";
+         Node temp = head;
+         while (temp != null) {
+             if (temp.getNext() == null) {
+                 res += temp.getValue() + " }";
+             } else {
+                 res += temp.getValue() + ", ";
+             }
+         }
+         return res;
+    }
     
     public boolean contains() { return false; }
     
