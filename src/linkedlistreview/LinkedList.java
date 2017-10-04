@@ -130,13 +130,14 @@ public class LinkedList {
     
     public void sort() { 
         boolean keepGoing = true;
-        Node temp = head;
-        int index = 0;
+        Node temp;
+        int index;
         while (keepGoing) {
+            temp = head;
             keepGoing = false;
             index = 0;
             while (temp.getNext() != null) {
-                if (temp.compareTo(temp.getNext()) < 0) {
+                if (temp.compareTo(temp.getNext()) > 0) {
                     keepGoing = true;
                     swap(index, index + 1);
                 }
