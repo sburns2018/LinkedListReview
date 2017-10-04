@@ -73,7 +73,7 @@ public class LinkedList {
         } else if (getAt(index) == null) {
             addLast(value);
         } else {
-            Node temp = new Node(value, getAt(index).getPrevious(), getAt(index));
+            Node temp = new Node(value, getAt(index), getAt(index).getPrevious());
             if (temp.getNext() != null) {temp.getNext().setPrevious(temp); }
             if (temp.getPrevious() != null) { temp.getPrevious().setNext(temp); }
         } 
