@@ -50,7 +50,16 @@ public class LinkedList {
          return res;
     }
     
-    public boolean contains() { return false; }
+    public boolean contains(String targ) {
+        Node temp = head;
+        while (temp != null) {
+            if (temp.getValue().equals(targ)) {
+                return true;
+            }
+            temp = temp.getNext();
+        }
+        return false;
+    }
     
     public void insertAt() { }
     
