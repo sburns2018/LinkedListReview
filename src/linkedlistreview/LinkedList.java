@@ -17,7 +17,7 @@ public class LinkedList {
     
     public Node getFirst() { return head; }
     
-    public void addLast() { 
+    public void addLast(String value) { 
         
     }
     
@@ -51,7 +51,18 @@ public class LinkedList {
     
     public boolean contains() { return false; }
     
-    public void insertAt() { }
+    public void insertAt(int index, String value) { 
+        if(index == 0) {
+            addFirst(value);
+        } else if (getAt(index) == null) {
+            addLast(value);
+        } else {
+            Node temp = new Node(value, getAt(index).getPrevious(), getAt(index));
+            if (temp.getNext() != null) {temp.getNext().setPrevious(temp); }
+            if (temp.getPrevious() != null) { temp.getPrevious().setNext(temp); }
+        }
+        
+    }
     
     public void insertAfter() { }
     
