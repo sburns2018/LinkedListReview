@@ -79,16 +79,21 @@ public class LinkedList {
         } 
     }
     
-    public void insertAfter(int index, String value) { 
+    public void insertAfter(String previousValue, String nextValue) { 
         Node temp = head;
         boolean endOfList = false;
         while(!endOfList) { 
-            if(temp.getValue().equals(value)) { 
-                if(temp.getNext() != null) { temp.setNext(new Node(value, temp, temp.getNext())); } else { temp.setNext(new Node(value, temp, null)); }
+            if(temp.getValue().equals(previousValue)) { 
+                if(temp.getNext() != null) { 
+                    temp.setNext(new Node(nextValue, temp.getNext(), temp)); 
+                    get(nextValue).getNext().setPrevious(get(nextValue));
+                } else { 
+                    temp.setNext(new Node(nextValue, null, temp)); 
+                }
                 endOfList = true;
             } else {  
                 if (temp.getNext() == null) {  
-                    temp.setNext(new Node(value, temp, null)); 
+                    temp.setNext(new Node(nextValue, null, temp)); 
                     endOfList = true;
                 }  else {  
                     temp = temp.getNext(); 
