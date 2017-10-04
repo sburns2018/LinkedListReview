@@ -17,13 +17,23 @@ public class LinkedList {
     
     public Node getFirst() { return head; }
     
-    public void addLast() { }
+    public void addLast() { 
+        
+    }
     
     public Node getLast() { return head; }
     
-    public Node get() { return head; }
+    public Node get(String value) { 
+        Node temp = head;
+        for(int i = 0; temp != null; i++) { if (temp.getValue().equals(value)) { return temp; } else { temp = temp.getNext(); } }
+        return null;
+    }
     
-    public Node getAt() { return head; }
+    public Node getAt(int index) { 
+        Node temp = head;
+        for(int i = 0; i != index; i++) { temp = temp.getNext(); }
+        return temp;
+    }
     
     public String toString() { return "a"; }
     
