@@ -61,11 +61,26 @@ public class LinkedList {
             Node temp = new Node(value, getAt(index).getPrevious(), getAt(index));
             if (temp.getNext() != null) {temp.getNext().setPrevious(temp); }
             if (temp.getPrevious() != null) { temp.getPrevious().setNext(temp); }
-        }
-        
+        } 
     }
     
-    public void insertAfter() { }
+    public void insertAfter(int index, String value) { 
+        Node temp = head;
+        boolean endOfList = false;
+        while(!endOfList) { 
+            if(temp.getValue().equals(value)) { 
+                if(temp.getNext() != null) { temp.setNext(new Node(value, temp, temp.getNext())); } else { temp.setNext(new Node(value, temp, null)); }
+                endOfList = true;
+            } else {  
+                if (temp.getNext() == null) {  
+                    temp.setNext(new Node(value, temp, null)); 
+                    endOfList = true;
+                }  else {  
+                    temp = temp.getNext(); 
+                }  
+            }
+        }
+    }
     
     public void insertBefore() { }
     
