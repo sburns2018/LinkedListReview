@@ -17,11 +17,17 @@ public class LinkedList {
     
     public Node getFirst() { return head; }
     
-    public void addLast() { 
-        
+    public void addLast(String val) { 
+        getLast().setNext(new Node(val, null, getLast()));
     }
     
-    public Node getLast() { return head; }
+    public Node getLast() { 
+        Node temp = head;
+        while (temp.getNext() != null) {
+            temp = temp.getNext();
+        }
+        return temp;
+    }
     
     public Node get(String value) { 
         Node temp = head;
