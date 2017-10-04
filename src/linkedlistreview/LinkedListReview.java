@@ -9,5 +9,7 @@ public class LinkedListReview {
        System.out.println(a);
        a.addLast("Hi there");
        System.out.println(a);
+       a.remove(1);
+       System.out.println(a);
     } 
 }

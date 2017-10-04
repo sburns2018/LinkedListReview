@@ -99,7 +99,20 @@ public class LinkedList {
     
     public void insertBefore() { }
     
-    public void remove() { }
+    public void remove(int index) { 
+        Node temp = getAt(index);
+        if (temp != null) {
+            if (temp.getPrevious() == null && temp.getNext() == null) {
+                head = null;
+            }
+            if (temp.getPrevious() != null) {
+                temp.getPrevious().setNext(temp.getNext());
+            }
+            if (temp.getNext() != null) {
+                temp.getNext().setPrevious(temp.getPrevious());
+            }
+        }
+    }
     
     public void swap() { }
     
