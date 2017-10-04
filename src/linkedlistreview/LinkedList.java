@@ -17,11 +17,17 @@ public class LinkedList {
     
     public Node getFirst() { return head; }
     
-    public void addLast(String value) { 
-        
+    public void addLast(String val) { 
+        getLast().setNext(new Node(val, null, getLast()));
     }
     
-    public Node getLast() { return head; }
+    public Node getLast() { 
+        Node temp = head;
+        while (temp.getNext() != null) {
+            temp = temp.getNext();
+        }
+        return temp;
+    }
     
     public Node get(String value) { 
         Node temp = head;
@@ -50,7 +56,16 @@ public class LinkedList {
          return res;
     }
     
-    public boolean contains() { return false; }
+    public boolean contains(String targ) {
+        Node temp = head;
+        while (temp != null) {
+            if (temp.getValue().equals(targ)) {
+                return true;
+            }
+            temp = temp.getNext();
+        }
+        return false;
+    }
     
     public void insertAt(int index, String value) { 
         if(index == 0) {
